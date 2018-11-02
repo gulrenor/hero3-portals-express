@@ -1,0 +1,37 @@
+extends _portal.pug
+
+append page-data
+  -
+    portalType = 'login';
+
+block main
+  main
+    .container
+      .columns
+        .column.level.is-flex
+          .level-item
+            a(href=brandUrl)
+              img.portal-logo(src=brandLogo)
+        .is-divider-vertical
+        .column
+          h2.title.is-4 !{hero} Account Login
+          form
+            .field
+              p Enter your username and password to login.
+            .field
+              p Don't have an account? 
+                a(href="/" + portalLocation + "_register.html") Click here to register
+                | .
+            .field
+              .control
+                input.input(type="text" placeholder="Username")
+            .field
+              .control
+                input.input(type="text" placeholder="Password")
+            .field
+              p By logging in, you accept the 
+                a.licenseTerms(href="#") Academic Licensing Terms
+                | .
+            .field
+              .control
+                button.button.is-link.is-uppercase.has-text-weight-semibold Submit

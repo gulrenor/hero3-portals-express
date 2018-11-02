@@ -1,0 +1,48 @@
+//- portal.pug
+//- 
+  _content.pug
+    main
+    modals
+
+extends _content.pug
+
+append page-data
+  -
+    navItems = [
+      {
+        text: 'Product',
+        type: 'is-text',
+        url: '#'
+      }, 
+      {
+        text: 'Customers',
+        type: 'is-text',
+        url: '#'
+      }, 
+      {
+        text: 'Pricing', 
+        type: 'is-text',
+        url: '#'
+      },
+      {
+        text: 'Community',
+        type: 'is-text',
+        url: '#'
+      },
+      {
+        text: 'heRomod',
+        type: 'is-text',
+        url: '#'
+      },
+      {
+        text: 'Get Started', 
+        type: 'is-link accounts is-uppercase has-text-weight-semibold',
+        //- url: 'http://hero3.heroapps.io/login'
+      }
+    ];
+
+block main
+  main
+
+append modals
+  include _modal-academic-eula

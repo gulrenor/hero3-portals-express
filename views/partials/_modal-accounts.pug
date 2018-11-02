@@ -1,0 +1,63 @@
+#accountsModal.modal.anchored
+  .modal-background
+  .modal-card
+    header.modal-card-head
+      tabs#tabs.tabs.is-fullwidth.modal-card-title
+        ul
+          li(data-tab="institutional").is-active
+            a.is-uppercase.has-text-weight-semibold Institutional
+          li(data-tab="academic")
+            a.is-uppercase.has-text-weight-semibold Academic
+
+    section#tab-content.modal-card-body
+      div(data-content="institutional").is-active
+        h1.title Account Login
+        p Governmental and institutional users should login using the portal link provided to them by their organization's administrator.
+        hr
+        
+        h3.subtitle.expansion.is-marginless
+          a I haven't received my link or I've forgotten it.
+        .is-hidden
+          form
+            .field
+              label If you haven’t yet received or have misplaced the link from your administrator, please enter a valid email address in the field below and one can be sent to you.
+            .field
+              .control
+                input.input(type="email" placeholder="Enter email")
+            .field
+              .control
+                a.button.is-link.is-uppercase.has-text-weight-semibold.ripple.raised(href="/institutional_login.html") Request Link
+            .field
+              label Didn't receive your email? <a href="#">Click here</a> to resend your link.
+        hr
+
+        h3.subtitle.expansion.is-marginless
+          a Am I authorized to access !{hero}?
+        .is-hidden
+          form
+            .field
+              label Please enter a valid email that uses your organization's domain name to check your authorization status.
+            .field
+              .control
+                input.input(type="email" placeholder="Enter email")
+            .field
+              .control
+                button.button.is-link.is-uppercase.has-text-weight-semibold.ripple.raised Check Authorization
+
+      div(data-content="academic")
+        h1.title Existing Users
+        p Academic users can click this link to be taken to the academic portal where they can log in.
+        form
+          .field
+            .control
+              a.button.is-link.is-uppercase.has-text-weight-semibold.ripple.raised(href="/academic_login.html") Login
+        hr
+        h1.title New Users
+        p Currently enrolled full-time students or faculty can register for a complimentary !{hero} license at the link below. Licensing restrictions apply.
+        form
+          .field
+            .control
+              a.button.is-link.is-uppercase.has-text-weight-semibold.ripple.raised(href="/academic_register.html") Register
+
+    footer.modal-card-foot
+      a.has-text-white.is-size-7 I need additional assistance

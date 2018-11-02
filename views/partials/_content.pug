@@ -1,0 +1,51 @@
+//- content.pug
+//-
+  _layout.pug
+    page-data
+    content
+      header
+      main
+      footer
+      modals
+
+extends _layout.pug
+
+block page-data
+  - 
+    hero = 'h&#275;Ro3';
+    logo = 'images/logo.png';
+    heroHeader = 'Build your models online &ndash;<br class="is-hidden-mobile" />better, faster, and at lower cost.';
+    heroBody = 'h&#274;Ro3 is a new, Web-based platform that lets you build health-economics models online, faster and at lower cost than you ever thought possible, and then run them using an open-source modeling package. And when you want to share them with others, do so securely, as active, visually engaging Web apps.';
+    heroImage = 'images/monitor-with-app-displayed.png'
+
+block content
+  body.portal
+
+    //- Header and Nav
+    block header
+      header.container
+        nav.navbar.is-transparent
+          .navbar-brand
+            a.navbar-item(href="#")
+              img.logo(src=logo)
+            a.navbar-burger.burger(data-target="menu")
+              //- Required by Bulma
+              span
+              span
+              span
+          #menu.navbar-menu
+            .navbar-end
+              each item in navItems
+                .navbar-item
+                  a.button(id=item.id class=item.type href=item.url)= item.text
+    
+    block main
+      main
+
+    //- Footer
+    block footer
+      footer.footer
+        .container.content.is-small.has-text-right.has-text-white
+          span &copy;#{(new Date()).getFullYear()} Health Economics in R Online, LLC. All Rights Reserved.
+
+    block modals

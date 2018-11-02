@@ -1,0 +1,28 @@
+//- layout.pug
+//- 
+  content
+
+mixin hero-color-bar
+  .hero-color-bar
+    .red
+    .green
+    .blue
+    .purple
+    .orange
+
+block page-data
+
+<!DOCTYPE html>
+html
+
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title !{hero}
+    link(href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css")
+    link(rel="stylesheet" href="css/master.min.css")
+
+    block content
+
+    //- Scripts
+    include _scripts

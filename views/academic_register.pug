@@ -1,0 +1,40 @@
+extends _portal-register.pug
+
+append page-data
+  - 
+    home = '/index.html'
+    logo = 'images/hero3_logo_white.svg'
+    brandLogo = 'images/logo.png'
+    brandUrl = '/index.html'
+    navItems = [
+      {
+        text: 'About',
+        type: 'is-text',
+        url: '#'
+      }, 
+      {
+        text: 'Login',
+        type: 'is-text',
+        url: '/academic_login.html'
+      } 
+    ];
+
+block header
+  .has-background-primary
+    header.container
+      nav.navbar.is-transparent.is-primary
+        .navbar-brand
+          a.navbar-item(href=home)
+            img.logo(src=logo)
+          a.navbar-burger.burger(data-target="menu")
+            //- Required by Bulma
+            span
+            span
+            span
+        #menu.navbar-menu
+          .navbar-end
+            each item in navItems
+              .navbar-item
+                a.button.has-text-white(id=item.id class=item.type href=item.url)= item.text
+      
+  +hero-color-bar

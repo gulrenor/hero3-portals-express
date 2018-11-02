@@ -1,0 +1,44 @@
+extends _portal-login.pug
+
+append page-data
+  - 
+    org = 'Merck'
+    orgUrl = 'https://www.merck.com/'
+    home = '/index.html'
+    logo = 'images/hero3_logo_white.svg'
+    brandLogo = 'images/Merck_Logo.png'
+    navItems = [
+      {
+        text: 'About',
+        type: 'is-text',
+        url: '#'
+      }, 
+      {
+        text: 'Register',
+        type: 'is-text',
+        url: '/institutional_register.html'
+      }, 
+    ];
+
+block header
+  .has-background-merck
+    header.container
+      nav.navbar.is-transparent.has-background-merck
+        .navbar-brand
+          a.navbar-item(href=home)
+            img.logo(src=logo)
+          a.navbar-burger.burger(data-target="menu")
+            //- Required by Bulma
+            span
+            span
+            span
+        #menu.navbar-menu
+          .navbar-end
+            each item in navItems
+              .navbar-item
+                a.button.has-text-white.has-background-merck(id=item.id class=item.type href=item.url)= item.text
+
+block footer
+  footer.footer.is-fixed-bottom.has-background-merck
+    .container.content.is-small.has-text-right.has-text-white
+      span &copy;#{(new Date()).getFullYear()} Health Economics in R Online, LLC. All Rights Reserved.

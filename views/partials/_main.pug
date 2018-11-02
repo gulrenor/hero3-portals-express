@@ -1,0 +1,325 @@
+//- main.pug
+//- 
+  _content.pug
+    main
+      hero
+      feature-list
+      comparison
+      testimonials
+      partners
+      contact
+    modals
+
+extends _content.pug
+
+append page-data
+  -
+    navItems = [
+      {
+        text: 'Product',
+        type: 'is-text',
+        url: '#'
+      }, 
+      {
+        text: 'Customers',
+        type: 'is-text',
+        url: '#'
+      }, 
+      {
+        text: 'Pricing', 
+        type: 'is-text',
+        url: '#'
+      },
+      {
+        text: 'Community',
+        type: 'is-text',
+        url: '#'
+      },
+      {
+        text: 'heRomod',
+        type: 'is-text',
+        url: '#'
+      },
+      {
+        text: 'Get Started', 
+        type: 'is-link accounts is-uppercase has-text-weight-semibold',
+        //- url: 'http://hero3.heroapps.io/login'
+      }
+    ];
+    featureList = [
+      {
+        header: 'Build and share models securely.',
+        text: 'h&#275;Ro3 is a new, Web-based platform that lets you build health-economics models online, faster and at lower cost than you ever thought possible, and then run them using an open-source modeling package.',
+        icon: 'account',
+        color: 'red'
+      },
+      {
+        header: 'Build and share models securely.',
+        text: 'h&#275;Ro3 is a new, Web-based platform that lets you build health-economics models online, faster and at lower cost than you ever thought possible, and then run them using an open-source modeling package.',
+        icon: 'alarm-check',
+        color: 'green'
+      },
+      {
+        header: 'Build and share models securely.',
+        text: 'h&#275;Ro3 is a new, Web-based platform that lets you build health-economics models online, faster and at lower cost than you ever thought possible, and then run them using an open-source modeling package.',
+        icon: 'alert-decagram',
+        color: 'blue'
+      },
+      {
+        header: 'Build and share models securely.',
+        text: 'h&#275;Ro3 is a new, Web-based platform that lets you build health-economics models online, faster and at lower cost than you ever thought possible, and then run them using an open-source modeling package.',
+        icon: 'animation',
+        color: 'purple'
+      },
+      {
+        header: 'Build and share models securely.',
+        text: 'h&#275;Ro3 is a new, Web-based platform that lets you build health-economics models online, faster and at lower cost than you ever thought possible, and then run them using an open-source modeling package.',
+        icon: 'at',
+        color: 'orange'
+      },
+      {
+        header: 'Build and share models securely.',
+        text: 'h&#275;Ro3 is a new, Web-based platform that lets you build health-economics models online, faster and at lower cost than you ever thought possible, and then run them using an open-source modeling package.',
+        icon: 'cloud',
+        color: 'primary'
+      }
+    ];
+    versusHero = [
+      {
+        text: 'Get buy-in work flows , yet re-inventing the wheel, or translating our vision of having a market leading platfrom for hammer out, so pig in a python.'
+      },
+      {
+        text: 'Collaboration through advanced technlogy execute.'
+      },
+      {
+        text: 'Driving the initiative forward helicopter view show pony, nor quick win.'
+      },
+      {
+        text: 'Bells and whistles. Nail jelly to the hothouse wall blue money value prop or tbrand terrorists.'
+      }
+    ];
+
+    versusExcel = [
+      {
+        text: 'Get buy-in work flows , yet re-inventing the wheel, or translating our vision of having a market leading platfrom for hammer out, so pig in a python.'
+      },
+      {
+        text: 'Collaboration through advanced technlogy execute.'
+      },
+      {
+        text: 'Driving the initiative forward helicopter view show pony, nor quick win.'
+      },
+      {
+        text: 'Bells and whistles. Nail jelly to the hothouse wall blue money value prop or tbrand terrorists.'
+      }
+    ]
+
+    testimonials = [
+      {
+        text: '“HeRo3 is the real deal! I am completely blown away. It fits our needs perfectly.“',
+        name: 'Willy Y.',
+        position: 'Research Analyst',
+        color: 'blue'
+      },
+      {
+        text: '“It’s just amazing. HeRo3 has really helped our business. You guys rock! It’s just amazing.”',
+        name: 'Vasily O.',
+        position: 'Project Manager',
+        color: 'green'
+      },
+      {
+        text: '“It’s really wonderful. I would like to personally thank you for your outstanding product. HeRo3 is the real deal!”',
+        name: 'Carmel C.',
+        position: 'Senior Research Analyst',
+        color: 'purple'
+      },
+    ];
+    partners = [
+      {
+        logoSrc: 'amgen.png',
+        name: 'Amgen'
+      },
+      {
+        logoSrc: 'merck.png',
+        name: 'Merck'
+      },
+      {
+        logoSrc: 'novartis.png',
+        name: 'Novartis'
+      },
+      {
+        logoSrc: 'amgen.png',
+        name: 'Amgen'
+      },
+      {
+        logoSrc: 'merck.png',
+        name: 'Merck'
+      },
+      {
+        logoSrc: 'novartis.png',
+        name: 'Novartis'
+      },
+    ]
+
+block main
+  main
+
+    block hero
+      //- Hero pane and image
+      section.hero.is-primary.is-bold
+        .hero-body
+          .container
+            .columns
+              .column.is-two-thirds
+                h2.title.is-large !{heroHeader}
+                p.subtitle !{heroBody}
+                button.button.is-primary.is-info.is-large.accounts.ripple.raised(href="http://hero3.heroapps.io/login" target="_new") Launch !{hero}
+              .column.is-hidden-mobile(style="position:relative;")
+                img.hero-image.is-pulled-right(src=heroImage)
+    
+    +hero-color-bar
+
+    block feature-list
+      //- Feature List
+      section#features.features.section
+        .container
+          .columns.is-multiline
+            each feature in featureList
+              .column.is-half
+                article.media
+                  .media-left.icon.is-exlarge.is-circular.has-text-white(class=feature.color)
+                    i.mdi.mdi-36px(class='mdi-' + feature.icon)
+                  .media-content
+                    h3.title.is-4 !{feature.header}
+                    p !{feature.text}
+
+    block comparison
+      //- Comparison vs. Excel
+      section#versus.versus.section
+        .container
+          h1.title.has-text-centered Harnessing the Power of Modern Web Technology.
+          .columns.level.primary.has-text-white
+          .columns.has-background-primary.has-text-white
+            .column.is-3.is-offset-1
+              p.has-text-centered
+                img.logo(src=logo)
+            .column.is-4
+              p.has-text-centered.title vs.
+            .column.is-3.level
+              p.level-item.has-text-centered Traditional Excel-Based Modeling
+          .columns
+            .column.notification.is-3.is-offset-1
+              p.has-text-centered
+                img.logo(src=logo)
+              each plus in versusHero
+                article.media
+                  .media-left.icon.is-medium.is-circular.has-text-white.confirm
+                    i.mdi.mdi-24px.mdi-check
+                  .media-content.has-text-success
+                    p=plus.text
+            .column.is-4
+              p.has-text-centered.title vs.
+            .column.is-3
+              p.has-text-centered.subtitle Traditional Excel-Based Modeling
+              each minus in versusExcel
+                article.media
+                  .media-left.icon.is-medium.is-circular.has-text-white.cancel
+                    i.mdi.mdi-24px.mdi-close
+                  .media-content.has-text-danger
+                    p=minus.text
+
+    block testimonials
+      //- Customer Testimomials
+      section#testimonials.testimonials.section
+        .container
+          h1.title.has-text-centered Trusted by Industry Experts.
+          .tile.is-ancestor
+            each testimony in testimonials
+              .tile.is-parent
+                article.tile.is-child.notification.is-vertical(class='is-hero-' + testimony.color)
+                  p.content.is-medium= testimony.text
+                  br
+                  p
+                    strong= testimony.name
+                  p
+                    em= testimony.position
+          .level
+            .level-item
+              a.button See More Testimonials
+
+    block partners
+      //- Development and Industry partners
+      section#partners.partners.section
+        .container
+          .tile.is-ancestor
+            each partner in partners
+              .tile.is-parent.is-2
+                article.tile.is-child.has-text-centered
+                  .figure
+                    - const img = 'images/' + partner.logoSrc
+                    img(src=img alt=partner.name)
+
+    block contact
+      //- Contact form
+      section#contact.contact.hero.is-link.is-bold
+        .hero-body
+          .container
+            .has-text-centered
+              h1.title Contact the !{hero} team.
+              p Send us a message for product info, licensing and pricing, or support.
+
+              hr
+
+            .columns
+              form.column.is-6.is-offset-3
+                .field
+                  //- label.label Name
+                  .control
+                    input.input(type="text" placeholder="Name")
+
+                .field
+                  //- label.label Company
+                  .control
+                    input.input(type="text" placeholder="Company")
+
+                .field
+                  //- label.label Email
+                  .control
+                    input.input(type="email" placeholder="Email")
+
+                .field
+                  //- label.label Telephone
+                  .control
+                    input.input(type="tel" placeholder="Telephone")
+
+                .field.columns
+                  .column.is-6
+                    label.label I'm interested in:
+                  .column.is-6.is-grouped
+                    .control
+                      label.checkbox
+                        input(type="checkbox")
+                        | More info about !{hero}
+                    .control
+                      label.checkbox
+                        input(type="checkbox")
+                        | Business or Enterprise pricing
+                    .control
+                        input(type="checkbox")
+                        | Academic licenses
+                
+                .field
+                  //- label.label Additional Comments
+                  .control
+                    textarea.textarea(placeholder="Additional Comments")
+                      
+                .field.is-grouped.is-grouped-right
+                  .control
+                    button.button.is-link.is-inverted Submit
+                  .control
+                    button.button.is-link.is-inverted.is-outlined Cancel
+
+    +hero-color-bar
+
+  append modals
+    include _modal-accounts

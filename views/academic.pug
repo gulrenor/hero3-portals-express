@@ -1,0 +1,115 @@
+- 
+  home = '/index.html'
+  logo = 'images/hero3_logo_white.svg'
+  brandLogo = 'images/logo.png'
+  brandUrl = '/index.html'
+  navItems = [
+    {
+      text: 'About',
+      type: 'is-text',
+      url: '#'
+    }, 
+    {
+      text: 'Login',
+      type: 'is-text',
+      url: '/academic_login.html'
+    } 
+  ];
+
+<!DOCTYPE html>
+html
+
+  head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title h&#275;Ro3
+    link(href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css")
+    link(rel="stylesheet" href="css/master.min.css")
+
+  body.portal
+    //- Header and Nav
+    .has-background-primary
+      header.container
+        nav.navbar.is-transparent.is-primary
+          .navbar-brand
+            a.navbar-item(href=home)
+              img.logo(src=logo)
+            a.navbar-burger.burger(data-target="menu")
+              //- Required by Bulma
+              span
+              span
+              span
+          #menu.navbar-menu
+            .navbar-end
+              each item in navItems
+                .navbar-item
+                  a.button.has-text-white(id=item.id class=item.type href=item.url)= item.text
+
+    .hero-color-bar
+      .red
+      .green
+      .blue
+      .purple
+      .orange
+
+    .container
+      .columns
+        .column.level.is-flex
+          .level-item
+            a(href=brandUrl)
+              img.portal-logo(src=brandLogo)
+        .is-divider-vertical
+        .column
+          h2.title.is-4 !{hero} Academic User Registration
+          form
+            .field
+              .control
+                input.input(type="text" placeholder="First Name" required)
+            .field
+              .control
+                input.input(type="text" placeholder="Last Name" required)
+            .field
+              .control
+                input.input(type="text" placeholder="Email" required)
+            .field
+              .control
+                input.input(type="text" placeholder="Academic Intitution" required)
+            .field
+              .control
+                textarea.textarea(placeholder="Comments")
+            .field
+              .control
+                label.checkbox
+                input(type="checkbox" required)
+                | &nbsp;I have read and agree to the 
+                a.licenseTerms(href="#") Academic Licensing Terms
+                | .
+
+            .field
+              .control
+                button.button.is-link.is-uppercase.has-text-weight-semibold(disabled) Submit
+
+
+
+    .hero-color-bar
+      .red
+      .green
+      .blue
+      .purple
+      .orange
+
+    //- Footer
+    footer.footer.is-fixed-bottom
+      .container.content.is-small.has-text-right.has-text-white
+        span &copy;#{(new Date()).getFullYear()} Health Economics in R Online, LLC. All Rights Reserved.
+
+    #licenseModal.modal
+      .modal-background
+      .modal-card
+        header.modal-card-head
+          h1.title !{hero} Academic Licensing Terms
+        section.modal-card-body(style="overflow:auto;")
+          p=eulaText
+        footer.modal-card-foot
+    //- Scripts
+    script(src="js/scripts.min.js" type="text/javascript")

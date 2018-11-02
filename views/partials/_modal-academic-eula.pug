@@ -1,0 +1,11 @@
+#academicEulaModal.modal
+  .modal-background
+  main.modal-card
+    header.modal-card-head
+      h1.title !{hero} Academic License
+    section#license.modal-card-body
+      .content
+        include:markdown-it academic_eula.md
+    footer.modal-card-foot
+      button#acceptButton.button.is-link.is-uppercase.has-text-weight-semibold(disabled) I Accept the Terms
+      button#rejectButton.button.is-uppercase.has-text-weight-semibold(disabled) I Reject the Terms

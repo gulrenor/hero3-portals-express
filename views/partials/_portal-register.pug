@@ -1,0 +1,45 @@
+extends _portal.pug
+
+append page-data
+  -
+    portalType = 'register';
+
+block main
+  main
+    .container
+      .columns
+        .column.level.is-flex
+          .level-item
+            a(href=brandUrl)
+              img.portal-logo(src=brandLogo)
+        .is-divider-vertical
+        .column
+          h2.title.is-4 !{hero} Academic User Registration
+          form#registrationForm
+            .field
+              .control
+                input.input(type="text" placeholder="First First Name" required)
+            .field
+              .control
+                input.input(type="text" placeholder="Last Name" required)
+            .field
+              .control
+                input.input(type="text" placeholder="Email" required)
+            .field
+              .control
+                input.input(type="text" placeholder="Academic Intitution" autocomplete="organization" required)
+            .field
+              .control
+                textarea.textarea(placeholder="Comments")
+            .field
+              .control
+                label.checkbox
+                input#acceptCheck(type="checkbox" disabled)
+                | &nbsp;I have read and agree to the 
+                a.licenseTerms(href="#") Academic Licensing Terms
+                | .
+
+            .field
+              .control
+                button#submit.button.is-link.is-uppercase.has-text-weight-semibold(disabled) Submit
+
