@@ -1,0 +1,65 @@
+// Override Bulma Sass Variables
+
+// Overrides material design icon font location
+$mdi-font-path: "/node_modules/@mdi/font/fonts" !default;
+
+// Colors
+$primary: hsl(208, 46, 25);
+$link: rgb(0, 153, 255);
+$success: $confirm;
+$danger: $cancel;
+
+// Typography
+$family-sans-serif: 'Roboto', sans-serif;
+
+// Footer
+$footer-background-color: $primary;
+
+// Form
+$label-color: $white;
+
+$custom-colors: (
+  "hero-red": ($hero-red, $white),
+  "hero-blue": ($hero-blue, $white),
+  "hero-green": ($hero-green, $white),
+  "hero-purple": ($hero-purple, $white),
+  "hero-orange": ($hero-orange, $white)
+);
+
+// Tabs
+$invisible: rgba(0, 0, 0, 0);
+$tabs-link-active-border-bottom-color: $warn;
+$tabs-link-active-color: $warn;
+$tabs-link-color: rgba(255, 255, 255, .5);
+$tabs-border-bottom-color: $invisible;
+$tabs-link-hover-border-bottom-color: $invisible;
+$tabs-link-hover-color: $white;
+
+$tabs-toggle-link-hover-border-color: $white;
+$tabs-border-bottom-width: 3px;
+$tabs-link-padding: 1.25rem 2rem;
+
+// Modal
+// $modal-card-head-padding: 0;
+$modal-card-header-radius: 2px;
+$modal-card-footer-radius: 2px;
+// $modal-card-head-background-color: $primary;
+$modal-background-background-color: rgba($link, .7);
+
+.modal .modal-card {
+  box-shadow: 
+    0 11px 15px -7px rgba(0,0,0,.2), 
+    0 24px 38px 3px rgba(0,0,0,.14), 
+    0 9px 46px 8px rgba(0,0,0,.12);
+}
+
+#accountsModal {
+  .modal-card-head {
+    padding: 0;
+    border-bottom: 0;
+  }
+  .modal-card-head,
+  .modal-card-foot {
+    background-color: $primary;
+  }
+}

@@ -1,10 +1,10 @@
-extends _portal-login.pug
+extends partials/_portal-login.pug
 
 append page-data
   - 
     home = '/index.html'
-    logo = 'assets/images/hero3_logo_white.svg'
-    brandLogo = 'assets/images/logo.png'
+    logo = '/images/hero3_logo_white.svg'
+    brandLogo = '/images/logo.png'
     brandUrl = '/index.html'
     portalLocation = 'academic';
     navItems = [
@@ -16,7 +16,7 @@ append page-data
       {
         text: 'Register',
         type: 'is-text',
-        url: '/academic_register.html'
+        url: '/academic/register/'
       } 
     ];
 

@@ -173,7 +173,7 @@ block main
               .column.is-two-thirds
                 h2.title.is-large !{heroHeader}
                 p.subtitle !{heroBody}
-                button.button.is-primary.is-info.is-large.accounts.ripple.raised(href="http://hero3.heroapps.io/login" target="_new") Launch !{hero}
+                button.button.is-primary.is-info.is-large.accounts.ripple.raised(href="/login/" target="_new") Launch !{hero}
               .column.is-hidden-mobile(style="position:relative;")
                 img.hero-image.is-pulled-right(src=heroImage)
     
@@ -256,7 +256,7 @@ block main
               .tile.is-parent.is-2
                 article.tile.is-child.has-text-centered
                   .figure
-                    - const img = 'images/' + partner.logoSrc
+                    - const img = '/images/' + partner.logoSrc
                     img(src=img alt=partner.name)
 
     block contact

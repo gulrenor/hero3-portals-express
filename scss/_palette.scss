@@ -1,0 +1,50 @@
+$white: rgb(255, 255, 255);
+$dark-grey: rgb(112, 112, 112);
+$med-grey: rgb(187, 191, 194);
+$light-grey: rgb(238, 238, 238);
+$black: rgb(0, 0, 0);
+
+$dark-primary: rgb(35, 51, 65);
+$med-primary: rgb(101, 112, 122);
+$light-primary: rgb(228, 244, 255);
+
+$accent: rgb(0, 153, 255);
+
+$warn: rgb(255, 255, 141);
+
+$hero-red: rgb(192, 80, 77);
+$hero-blue: rgb(75, 172, 198);
+$hero-green: rgb(155, 186, 88);
+$hero-purple: rgb(128, 100, 161);
+$hero-orange: rgb(255, 147, 30);
+
+$confirm: rgb(72, 157, 89);
+$cancel: rgb(192, 80, 77);
+
+// Branded Colors
+$merck-green: rgb(0, 122, 115);
+
+.red {
+  background-color: $hero-red;
+}
+.green {
+  background-color: $hero-green;
+}
+.blue {
+  background-color: $hero-blue;
+}
+.purple {
+  background-color: $hero-purple;
+}
+.orange {
+  background-color: $hero-orange;
+}
+.primary {
+  background-color: $dark-primary;
+}
+.confirm {
+  background-color: $confirm;
+}
+.cancel {
+  background-color: $cancel;
+}
